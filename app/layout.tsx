@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import navbar from "@/components/navbar";
-import footer from "@/components/footer";
+import Navbar from "@/Components/Navbar";
+import Footer from "@/Components/Footer";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -16,7 +16,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Viagens",
+  title: "Trivago",
   description: "Aplicacao para Viagens",
 };
 
@@ -28,10 +28,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-      <navbar/>
-
-      <footer/>
+        <Navbar />
+        <main className="relative overflow-hidden">
         {children}
+        </main>
+        
+        <Footer />
       </body>
     </html>
   );
